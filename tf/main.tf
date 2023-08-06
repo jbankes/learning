@@ -2,7 +2,7 @@ terraform {
   backend "s3" {
     bucket         = "BUCKET-PREFIX-terraform-states"
     key            = "terraform.tfstate"
-    dynamodb_table = "replacement-terraform-locks"
+    dynamodb_table = "DBTABLE-PREFIX-terraform-locks"
     encrypt        = true
     region         = "us-west-2"
   }
