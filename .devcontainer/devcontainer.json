@@ -35,5 +35,12 @@
 		"cpus": 2,
 		"memory": "4gb",
 		"storage": "15gb"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot"
+			]
+		}
 	}
 }
