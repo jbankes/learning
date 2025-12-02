@@ -11,4 +11,4 @@ spec:
     - ReadWriteOnce
   storageClassName: local-storage
   hostPath:
-    path: /workspaces/cloudnative_learning/kaniko/volume # replace with local directory, such as "/home/<user-name>/kaniko"
+    path: /home/docker/kaniko # replace with local directory, such as "/home/<user-name>/kaniko"

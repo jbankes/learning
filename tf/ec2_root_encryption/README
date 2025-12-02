@@ -1,0 +1,4 @@
+# EBS Root Encryption Experiment
+
+Sets up an instance with an encrypted root volume. This was the preparation for an experiment. The instance gets the
+most recent version of the Ubuntu 22.04 AMI. 

@@ -1,12 +1,12 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/debian
 {
-	"name": "Debian",
+	"name": "Ubuntu",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Debian version: bullseye, buster
 		// Use bullseye on local arm64/Apple Silicon.
-		"args": { "VARIANT": "bullseye" }
+		"args": { "VARIANT": "jammy" }
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -18,12 +18,29 @@
 	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
 	// "runArgs": [ "--cap-add=SYS_PTRACE", "--security-opt", "seccomp=unconfined" ],
 
+	"postCreateCommand": "git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/vscode/.oh-my-zsh/custom/themes/powerlevel10k",
+
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
 		"docker-from-docker": "latest",
 		"kubectl-helm-minikube": "latest",
 		"git": "latest",
-		"github-cli": "latest"
+		"github-cli": "latest",
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/terraform:1": {},
+		"ghcr.io/devcontainers-contrib/features/devcontainers-cli:1": {}
+	},
+	"hostRequirements": {
+		"cpus": 2,
+		"memory": "4gb",
+		"storage": "15gb"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"GitHub.copilot"
+			]
+		}
 	}
 }
